@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       await register(name, email, password);
-      toast.success("Registration successful!");
+      toast.success("Registration successful! Please check your email to verify for login!");
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
