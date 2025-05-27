@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex space-x-8 font-semibold text-teal-700">
+        <nav className="hidden lg:flex space-x-8 font-semibold text-teal-700 items-center">
           {navLinks.map(({ name, to }) => (
             <Link
               key={name}
@@ -44,10 +44,8 @@ const Navbar = () => {
               <span className="relative">{name}</span>
             </Link>
           ))}
-        </nav>
-
-        {/* Right icons */}
-        <div className="flex items-center space-x-4">
+             {/* Right icons */}
+        <div className="items-center space-x-4 lg:flex hidden">
           {user ? (
             <Link
               to="/profile"
@@ -68,7 +66,12 @@ const Navbar = () => {
               </button>
             </Link>
           )}
+          </div>
+        </nav>
 
+     
+
+          <div className="lg:hidden inline-block">
           {/* Hamburger */}
           <button
             onClick={toggleMenu}
@@ -77,7 +80,7 @@ const Navbar = () => {
           >
             {menuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
           </button>
-        </div>
+          </div>
       </div>
 
       {/* Mobile Menu */}
@@ -88,7 +91,7 @@ const Navbar = () => {
       >
         <ul className="flex flex-col space-y-4 px-6 font-semibold">
           {navLinks.map(({ name, to }) => (
-            <li key={name}>
+            <li key={name} className="ml-3">
               <Link
                 to={to}
                 className="block hover:text-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-400"
@@ -99,7 +102,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li>
+          <li className="flex justify-start">
             {user ? (
               <Link
                 to="/profile"

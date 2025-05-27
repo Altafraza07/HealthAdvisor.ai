@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../../services/axiosInstance'; // Use the correct axios instance
+import axiosInstance from '../../services/axiosInstance';
 import { toast } from 'react-toastify';
 
 const EditProfile = () => {
   const [user, setUser] = useState({ name: '', email: '' });
-  const [password, setPassword] = useState(''); // State for password input
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch user profile on component mount
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axiosInstance.get('/user/profile'); // Make sure the endpoint is correct
+        const response = await axiosInstance.get('/user/profile');
         setUser(response.data);
       } catch (err) {
         setError('Failed to fetch profile');
@@ -30,7 +29,7 @@ const EditProfile = () => {
   };
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value); // Update password state
+    setPassword(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -43,8 +42,8 @@ const EditProfile = () => {
     }
 
     try {
-      const updateData = { ...user, password }; // Include the password field
-      await axiosInstance.put('/user/profile', updateData); // Make sure the endpoint is correct
+      const updateData = { ...user, password };
+      await axiosInstance.put('/user/profile', updateData);
       toast.success('Profile updated successfully!');
     } catch (err) {
       toast.error('Invalid Password');
@@ -56,46 +55,50 @@ const EditProfile = () => {
   }
 
   return (
-    <div className="flex flex-col items-center p-6">
-      {error && <p className="text-red-500">{error}</p>}
-      <h2 className="text-2xl font-semibold mb-4">Edit Profile</h2>
-      <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
-        <div className="flex flex-col">
-          <label className="font-medium">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={user.name}
-            onChange={handleChange}
-            className="p-2 border border-gray-300 rounded-md"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label className="font-medium">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={user.email}
-            onChange={handleChange}
-            className="p-2 border border-gray-300 rounded-md"
-          />
-        </div>
-        {/* Password Field */}
-        <div className="flex flex-col">
-          <label className="font-medium">Password (required to update)</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="p-2 border border-gray-300 rounded-md"
-            required
-          />
-        </div>
-        <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded-md">
-          Update
-        </button>
-      </form>
+    <div className="px-4 sm:px-6 lg:px-8 py-6 w-full">
+      <div className="max-w-xl mx-auto bg-white shadow-md rounded-lg p-6">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">Edit Profile</h2>
+        {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="block mb-1 font-medium text-gray-700">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-medium text-gray-700">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-medium text-gray-700">Password (required to update)</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full p-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition"
+          >
+            Update Profile
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
