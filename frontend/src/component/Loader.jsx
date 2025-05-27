@@ -1,5 +1,5 @@
 import Lottie from "react-lottie"; 
-import { useLoader } from "../assets/loader/loaderContext"; 
+import { useLoader } from "../assets/loader/LoaderContext"; 
 
 import loaderAnimation from "../assets/loader/loader.json"; 
 
