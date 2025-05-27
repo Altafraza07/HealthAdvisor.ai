@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { useLoader } from "./loaderContext";
+import { useLoader } from "./LoaderContext";
 import Loader from "../../component/Loader";
 
 const GlobalLoader = () => {

@@ -12,7 +12,7 @@ import Privacy from "./Pages/Privacy"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import About from "./Pages/About";
 import GlobalLoader from "./assets/loader/GlobalLoader";
-import { LoaderProvider } from "./assets/loader/loaderContext";
+import { LoaderProvider } from "./assets/loader/LoaderContext";
 import UserProfilePage from "./Pages/UserProfilePage";
 import VerifyEmail from "./component/email/Email";
 

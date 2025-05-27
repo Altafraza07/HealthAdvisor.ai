@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Import toast
-import { useLoader } from "../assets/loader/loaderContext.jsx";
+import { useLoader } from "../assets/loader/LoaderContext.jsx";
 
 const Login = () => {
   const { user, login } = useContext(AuthContext); // Login function from context
