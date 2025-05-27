@@ -55,7 +55,7 @@ function App() {
         <Route path="/aboutus" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/profile" element={<UserProfilePage />} />
-        <Route path="/verify-email/:token" element={<VerifyEmail />} />
+       <Route path="/verify-email/:token" element={<VerifyEmail />} />
 
       </Routes>
      
