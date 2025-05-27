@@ -101,7 +101,7 @@ const ConsultHindi = () => {
 
     try {
       // फॉर्म डेटा को बैकएंड पर भेजें
-      const response = await fetch("http://localhost:8000/api/ask-gemini", {
+      const response = await fetch("https://healthadvisor-ai.onrender.com/api/ask-gemini", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
