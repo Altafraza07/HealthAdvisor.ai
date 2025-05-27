@@ -29,12 +29,12 @@ app.use("/api/user", userRoutes);
 app.use('/api', geminiRoute);
 
 // Serve static frontend
-app.use(express.static(join(__dirname, "..", "Frontend", "dist")));
+app.use(express.static(join(__dirname, "..", "frontend", "dist")));
 
 
 // Catch all route using regex for Express v5
 app.get(/.*/, (req, res) => {
-  res.sendFile(resolve(__dirname,"..", "Frontend", "dist", "index.html"));
+  res.sendFile(resolve(__dirname,"..", "frontend", "dist", "index.html"));
 });
 
 // Connect MongoDB and start server
