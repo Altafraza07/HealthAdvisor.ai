@@ -72,7 +72,7 @@ const AboutUs = () => {
       </div>
 
       {/* Developer Section */}
-      <div className="max-w-5xl mx-auto text-center relative z-[5] flex justify-center items-center">
+      <div className="mx-auto text-center relative z-[5] flex justify-center items-center">
         <motion.h2
           className="text-5xl font-extrabold text-white mb-6"
           initial={{ opacity: 0, y: -40 }}
