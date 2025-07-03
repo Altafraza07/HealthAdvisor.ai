@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="mt-4">
           <a href="https://facebook.com" className="text-lg mx-4 hover:text-teal-200">Facebook</a>
           <a href="https://twitter.com" className="text-lg mx-4 hover:text-teal-200">Twitter</a>
-          <a href="https://linkedin.com" className="text-lg mx-4 hover:text-teal-200">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/altafraza07/" className="text-lg mx-4 hover:text-teal-200">LinkedIn</a>
         </div>
       </div>
     </footer>

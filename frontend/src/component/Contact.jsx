@@ -23,7 +23,7 @@ const Contact = () => {
     },
     {
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/aryanastic',
+      link: 'https://www.linkedin.com/in/altafraza07/',
       icon: 'fa-linkedin',
       color: 'text-blue-700',
     },
@@ -35,7 +35,7 @@ const Contact = () => {
     },
     {
       name: 'Call Us',
-      link: 'tel:+919131629794',
+      link: 'tel:+917477067959',
       icon: 'fa-phone',
       color: 'text-green-600',
     },
