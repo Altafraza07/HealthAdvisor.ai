@@ -72,7 +72,7 @@ const AboutUs = () => {
       </div>
 
       {/* Developer Section */}
-      <div className="mx-auto text-center relative z-[5] flex justify-center items-center">
+      <div className="max-w-5xl mx-auto text-center relative z-[5]">
         <motion.h2
           className="text-5xl font-extrabold text-white mb-6"
           initial={{ opacity: 0, y: -40 }}
@@ -94,6 +94,8 @@ const AboutUs = () => {
         </motion.p>
 
         {/* Developer Profile Card */}
+        <div className="flex justify-center items-center">
+
         <motion.div
           className="max-w-md mx-auto bg-white/60 backdrop-blur-lg p-12 rounded-3xl shadow-xl border border-white/30 relative z-[10] transition duration-300 hover:scale-[1.02] hover:shadow-teal-300"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -194,6 +196,9 @@ const AboutUs = () => {
             </div>
           </div>
         </motion.div>
+
+                </div>
+
 
         {/* <motion.div
           className="mt-14"
